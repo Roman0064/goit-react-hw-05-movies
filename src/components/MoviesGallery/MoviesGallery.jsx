@@ -7,12 +7,13 @@ function MoviesGallery({ movies = [], isFetching = false, error = '' }) {
   const showLoader = isFetching;
   const showMovies = movies?.length > 0;
   const showError = !!error;
+  console.log(movies)
   return (
     <>
       <ul>
         {showMovies &&
           movies.map(movie => {
-            return <li><Link><MovieItem key={movie.id} {...movie} /> </Link> </li>;
+            return <MovieItem key={movie.id} {...movie} />;
           })}
       </ul>
       {showError && <p>{error.message}</p>}
@@ -24,9 +25,9 @@ function MovieItem({ original_title, id }) {
   const location = useLocation();
 
   return (
-    <p to={`/movies/${id}`} state={{ from: location }}>
+    <Link to={`/movies/${id}`} state={{ from: location }}>
       {original_title}
-    </p>
+    </Link>
   );
 }
 

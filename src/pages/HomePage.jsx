@@ -11,7 +11,6 @@ function HomePage() {
   }, [fetchData]);
 
   const movies = data?.results;
-  console.log(data)
 
   return (
     <div>
