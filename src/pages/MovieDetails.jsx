@@ -51,7 +51,7 @@ const MovieDetails = () => {
             className={css.img}
           />
           <div className={css.movie_info}>
-            <h1>{movieDetails.original_title}</h1>
+            <h1>{movieDetails.title}</h1>
             <p>Vote Average: {movieDetails.vote_average}</p>
             <h2>Overview</h2>
             <p> {movieDetails.overview}</p>
