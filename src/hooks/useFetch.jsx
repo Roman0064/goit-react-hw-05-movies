@@ -9,8 +9,6 @@ export const useFetch = () => {
     setIsFetching(true);
     try {
       const data = await requestFunction;
-      // const response = await fetch(url, body);
-      // const data = await response.json();
 
       setData(data);
     } catch (e) {

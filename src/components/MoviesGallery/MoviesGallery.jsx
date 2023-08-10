@@ -9,25 +9,25 @@ function MoviesGallery({ movies = [], isFetching = false, error = '' }) {
   const showError = !!error;
   console.log(movies)
   return (
-    <>
+    <div>
       <ul>
         {showMovies &&
           movies.map(movie => {
-            return <MovieItem key={movie.id} {...movie} />;
+            return <MovieItem key={movie.title} {...movie} />;
           })}
       </ul>
       {showError && <p>{error.message}</p>}
       {showLoader && <Loader />}
-    </>
+    </div>
   );
 }
-function MovieItem({ original_title, id }) {
+function MovieItem({ name, id, title }) {
   const location = useLocation();
 
   return (
     <li>
       <Link to={`/movies/${id}`} state={{ from: location }}>
-        {original_title}
+        {name}{title}
       </Link>
     </li>
   );
