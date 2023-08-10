@@ -28,7 +28,7 @@ function Reviews() {
         <ul>
           {reviews.length > 0 &&
             reviews.map(review => (
-              <li className="cast-item" key={review.id}>
+              <li key={review.id}>
                 <p>Author: {review.author}</p>
                 <p>Character: {review.content}</p>
               </li>

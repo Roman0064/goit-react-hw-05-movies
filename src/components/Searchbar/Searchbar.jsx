@@ -29,13 +29,12 @@ const Searchbar = ({ onSubmit }) => {
 
         <input
           onChange={handleSearchTermChange}
-          className="SearchForm-input"
           type="text"
           autoComplete="off"
           autoFocus
           name="searchValue"
           value={formData.searchValue}
-          placeholder="Search movies"
+          placeholder="Search movies..."
         />
       </form>
     </div>
