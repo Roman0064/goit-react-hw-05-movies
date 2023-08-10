@@ -1,0 +1,11 @@
+.search_button{
+    background-color: gray;
+    color: white;
+}
+
+.search_form{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

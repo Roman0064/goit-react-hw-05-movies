@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import css from './Searchbar.module.css'
 
 const INITIAL_FORM_STATE = {
   searchValue: '',
@@ -21,9 +22,9 @@ const Searchbar = ({ onSubmit }) => {
 
   return (
     <div>
-      <form className="SearchForm" onSubmit={handleSubmit}>
-        <button type="submit" className="SearchForm-button">
-          <span className="SearchForm-button-label">Search</span>
+      <form className={css.search_form} onSubmit={handleSubmit}>
+        <button type="submit" className={css.search_button}>
+          <span>Search</span>
         </button>
 
         <input

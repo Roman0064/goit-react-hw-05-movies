@@ -1,0 +1,22 @@
+.list_cast{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+    margin-top: 40px;
+}
+
+.img{
+    width: 100px;
+    height: 140px;
+}
+
+.cast_item > p{
+    margin: 0;
+}
+.cast_item{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

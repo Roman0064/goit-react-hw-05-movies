@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useFetch } from 'hooks/useFetch';
 import { MoviesAPI } from 'services/api';
+import css from './Cast.module.css'
 
 
 function Cast() {
@@ -25,13 +26,14 @@ function Cast() {
         </div>
       )}
       {!!castData && !isFetching && (
-        <ul>
+        <ul className={css.list_cast}>
           {castData.length > 0 &&
             castData.map(cast => (
-              <li className="cast-item" key={cast.id}>
+              <li className={css.cast_item} key={cast.id}>
                 <img
                   src={`https://image.tmdb.org/t/p/w500${cast.profile_path}`}
                   alt={cast.name}
+                  className={css.img}
                 />
                 <p>{cast.name}</p>
                 <p>Character: {cast.character}</p>

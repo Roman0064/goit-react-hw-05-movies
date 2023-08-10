@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, NavLink } from 'react-router-dom';
 import { Loader } from 'components';
 import css from './App.module.css'
 
@@ -9,11 +9,17 @@ const LazyMovieDetails = lazy(() => import('./pages/MovieDetails'));
 
 const App = () => {
   return (
-    <div className="app">
-      <header className="header">
+    <div className={css.app}>
+      <header>
         <nav className={css.nav_wrapper}>
-          <Link to="/" className={css.nav}>Home</Link>
-          <Link to="/movies" className={css.nav}>Movies</Link>
+          <NavLink to="/" className={({ isActive }) =>
+              isActive ? css.active : css.nav}>
+              Home
+          </NavLink>
+          <NavLink to="/movies" className={({ isActive }) =>
+              isActive ? css.active : css.nav}>
+              Movies
+          </NavLink>
         </nav>
       </header>
       <Suspense fallback={<Loader />}>

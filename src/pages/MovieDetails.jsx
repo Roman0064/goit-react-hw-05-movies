@@ -3,6 +3,7 @@ import { useParams,useLocation,useNavigate,Link,Routes,Route } from 'react-route
 import { MoviesAPI } from 'services/api';
 import { useFetch } from 'hooks/useFetch';
 import { Loader } from 'components';
+import css from './MovieDetails.module.css'
 
 
 const LazyCast = lazy(() => import('./Cast'));
@@ -34,8 +35,8 @@ const MovieDetails = () => {
   };
 
   return (
-    <div>
-      <button onClick={() => handleMoveBack()}>Go back</button>
+    <div className={css.wrapper}>
+      <button onClick={() => handleMoveBack()} className={css.button}> Go back </button>
       {error && <p>{error.message}</p>}
       {isFetching && (
         <div>
@@ -43,21 +44,22 @@ const MovieDetails = () => {
         </div>
       )}
       {!!movieDetails && (
-        <div>
+        <div className={css.page}>
           <img
             src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
             alt={movieDetails.original_title}
+            className={css.img}
           />
-          <div className="movie-info">
+          <div className={css.movie_info}>
             <h1>{movieDetails.original_title}</h1>
             <p>Vote Average: {movieDetails.vote_average}</p>
             <h2>Overview</h2>
             <p> {movieDetails.overview}</p>
-            <h3>Genres:</h3>
+            <h3>Genres</h3>
             {movieDetails?.genres?.length > 0
               ? movieDetails.genres.map(({ id, name }) => {
                   return (
-                    <span className="genre" key={id}>
+                    <span className={css.genre} key={id}>
                       {name}
                     </span>
                   );
@@ -67,16 +69,16 @@ const MovieDetails = () => {
         </div>
       )}
       <div>
-        <div className="additional-handlers">
+        <div className={css.additional_handlers}>
           <Link
-            className="link"
+            className={css.link}
             to="cast"
             state={{ from: location.state?.from }}
           >
             Cast
           </Link>
           <Link
-            className="link"
+            className={css.link}
             to="reviews"
             state={{ from: location.state?.from }}
           >
