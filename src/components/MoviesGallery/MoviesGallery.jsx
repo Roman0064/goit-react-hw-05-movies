@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Loader from 'components/Loader/Loader';
+import css from './MoviesGallery.module.css'
 
 function MoviesGallery({ movies = [], isFetching = false, error = '' }) {
   const showLoader = isFetching;
@@ -9,8 +10,8 @@ function MoviesGallery({ movies = [], isFetching = false, error = '' }) {
   const showError = !!error;
   console.log(movies)
   return (
-    <div>
-      <ul>
+    <div className={css.wrapper}>
+      <ul className={css.list}>
         {showMovies &&
           movies.map(movie => {
             return <MovieItem key={movie.title} {...movie} />;
@@ -25,7 +26,7 @@ function MovieItem({ name, id, title }) {
   const location = useLocation();
 
   return (
-    <li>
+    <li className={css.list_item}>
       <Link to={`/movies/${id}`} state={{ from: location }}>
         {name}{title}
       </Link>
