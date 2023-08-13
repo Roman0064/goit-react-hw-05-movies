@@ -2,6 +2,12 @@
     padding-left: 20px;
 }
 
+.nav_wrapper{
+    display: flex;
+    gap: 10px;
+    padding-top: 10px;
+}
+
 .nav{
     padding: 5px;
     text-decoration: none;
@@ -9,11 +15,6 @@
     font-weight: 500;
     color: black;
 }
-.nav_wrapper{
-    display: flex;
-    gap: 10px;
-}
-
 
 .active{
     border: 1px solid #000000;

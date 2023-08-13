@@ -6,30 +6,50 @@ export const MoviesAPI = {
     const response = await fetch(
       `${BASE_URL}/trending/all/day?api_key=${API_KEY}`
     );
-    return await response.json();
+    if(response.ok){
+      return await response.json();
+    }else{
+      throw Error;
+    }
   },
   async fetchMovieById (movieId)  {
     const response = await fetch(
       `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`
     );
-    return await response.json();
+    if(response.ok){
+      return await response.json();
+    }else{
+      throw Error;
+    }
   },
   async fetchMovieBySearch (searchTerm)  {
     const response = await fetch(
       `${BASE_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${searchTerm}&page=1&include_adult=false`
     );
-    return await response.json();
+    if(response.ok){
+      return await response.json();
+    }else{
+      throw Error;
+    }
   },
   async fetchMovieCast (movieId)  {
     const response = await fetch(
       `${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`
     );
-    return await response.json();
+    if(response.ok){
+      return await response.json();
+    }else{
+      throw Error;
+    }
   },
   async fetchMovieReviews (movieId)  {
     const response = await fetch(
       `${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`
     );
-    return await response.json();
+    if(response.ok){
+      return await response.json();
+    }else{
+      throw Error;
+    }
   },
 }

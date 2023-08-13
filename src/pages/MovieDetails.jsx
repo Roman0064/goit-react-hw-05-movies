@@ -14,7 +14,6 @@ const MovieDetails = () => {
   const movieDetails = data;
 
   const location = useLocation();
-  console.log('location From MovieDetal: ', location);
 
   const navigate = useNavigate();
   const { movieId } = useParams();

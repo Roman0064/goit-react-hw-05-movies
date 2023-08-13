@@ -8,7 +8,6 @@ function MoviesGallery({ movies = [], isFetching = false, error = '' }) {
   const showLoader = isFetching;
   const showMovies = movies?.length > 0;
   const showError = !!error;
-  console.log(movies)
   return (
     <div className={css.wrapper}>
       <ul className={css.list}>
@@ -17,7 +16,7 @@ function MoviesGallery({ movies = [], isFetching = false, error = '' }) {
             return <MovieItem key={movie.title} {...movie} />;
           })}
       </ul>
-      {showError && <p>{error.message}</p>}
+      {showError && <p>Error connecting to the server!!!</p>}
       {showLoader && <Loader />}
     </div>
   );
