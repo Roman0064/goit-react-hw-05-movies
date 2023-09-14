@@ -10,7 +10,7 @@ const LazyMovieDetails = lazy(() => import('./pages/MovieDetails'));
 const App = () => {
   return (
     <div className={css.app}>
-      <header>
+      <header className={css.head}>
         <nav className={css.nav_wrapper}>
           <NavLink to="/" className={({ isActive }) =>
               isActive ? css.active : css.nav}>
