@@ -51,10 +51,10 @@ const MovieDetails = () => {
           />
           <div className={css.movie_info}>
             <h1>{movieDetails.title}</h1>
-            <p>Vote Average: {movieDetails.vote_average}</p>
-            <h2>Overview</h2>
-            <p> {movieDetails.overview}</p>
-            <h3>Genres</h3>
+            <p>Vote Average: <span className={css.vote}>{movieDetails.vote_average}</span></p>
+            <h2 className={css.overview_h2}>Overview</h2>
+            <p className={css.overview_p}> {movieDetails.overview}</p>
+            <h3 className={css.overview_h3}>Genres</h3>
             {movieDetails?.genres?.length > 0
               ? movieDetails.genres.map(({ id, name }) => {
                   return (
@@ -74,14 +74,14 @@ const MovieDetails = () => {
             to="cast"
             state={{ from: location.state?.from }}
           >
-            Cast
+            <span className={css.link_item}>Cast</span>
           </Link>
           <Link
             className={css.link}
             to="reviews"
             state={{ from: location.state?.from }}
           >
-            Reviews
+            <span className={css.link_item}>Reviews</span>
           </Link>
         </div>
         <Suspense fallback={<Loader />}>

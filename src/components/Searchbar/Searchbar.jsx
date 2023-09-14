@@ -35,6 +35,7 @@ const Searchbar = ({ onSubmit }) => {
           name="searchValue"
           value={formData.searchValue}
           placeholder="Search movies..."
+          className={css.input_item}
         />
       </form>
     </div>

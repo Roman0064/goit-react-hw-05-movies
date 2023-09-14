@@ -1,0 +1,20 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+}
+.p_item{
+    margin: 0;
+    padding: 10px;
+}
+.li_item{
+    border: 2px solid black;
+}
+.span_item{
+    margin-right: 10px;
+    color: rgb(25, 183, 11);
+}

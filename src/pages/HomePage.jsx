@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useFetch } from 'hooks/useFetch';
 import { MoviesAPI } from 'services/api';
 import { MoviesGallery } from 'components';
+import css from "./HomePage.module.css"
 
 function HomePage() {
   const { isFetching, data, error, fetchData } = useFetch();
@@ -13,9 +14,9 @@ function HomePage() {
   const movies = data?.results;
 
   return (
-    <div>
+    <div className={css.wrapper}>
       <h1>Trending today</h1>
-      <MoviesGallery error={error} isFetching={isFetching} movies={movies} />
+      <MoviesGallery error={error} isFetching={isFetching} movies={movies} className={css.gallery}/>
     </div>
   );
 }

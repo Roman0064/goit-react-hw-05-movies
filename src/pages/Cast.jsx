@@ -35,8 +35,8 @@ function Cast() {
                   alt={cast.name}
                   className={css.img}
                 />
-                <p>{cast.name}</p>
-                <p>Character: {cast.character}</p>
+                <p className={css.name_item}>{cast.name}</p>
+                <p className={css.character_item}>Character '{cast.character}'</p>
               </li>
             ))}
         </ul>

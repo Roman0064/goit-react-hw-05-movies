@@ -1,9 +1,9 @@
 import { Loader } from 'components';
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-
 import { useFetch } from 'hooks/useFetch';
 import { MoviesAPI } from 'services/api';
+import css from './Reviews.module.css';
 
 function Reviews() {
   const { isFetching, data, error, fetchData } = useFetch();
@@ -25,12 +25,12 @@ function Reviews() {
         </div>
       )}
       {!!reviews && !isFetching && (
-        <ul>
+        <ul className={css.wrapper}>
           {reviews.length > 0 &&
             reviews.map(review => (
-              <li key={review.id}>
-                <p>Author: {review.author}</p>
-                <p>Character: {review.content}</p>
+              <li key={review.id} className={css.li_item}>
+                <p className={css.p_item}><span className={css.span_item}>Author:</span> {review.author}</p>
+                <p className={css.p_item}><span className={css.span_item}>Character:</span> {review.content}</p>
               </li>
             ))}
           {reviews.length === 0 && !isFetching && (

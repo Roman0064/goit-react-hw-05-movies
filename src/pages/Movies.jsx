@@ -25,7 +25,8 @@ function Movies() {
   return (
     <div>
       <Searchbar onSubmit={handleSubmitSearchTerm} />
-      <MoviesGallery error={error} isFetching={isFetching} movies={movies} />
+      {movies ? <MoviesGallery error={error} isFetching={isFetching} movies={movies} /> : ''
+        }
     </div>
   );
 }
