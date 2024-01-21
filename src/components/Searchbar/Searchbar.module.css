@@ -1,11 +1,17 @@
 .search_button{
-    background-color: rgba(255, 255, 255, 0.747);
-    border-radius: 4px;
+    background-color: white;
+    border-radius: 50px;
     color: black;
-    width: 70px;
+    width: 40px;
     height: 40px;
     font-weight: 600;
     font-size: 14px;
+    cursor: pointer;
+}
+
+.search_button:hover{
+    scale: 1.2;
+    background-color: greenyellow;
 }
 
 .search_form{

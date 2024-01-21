@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import css from './Searchbar.module.css'
+import css from './Searchbar.module.css';
+import search from '../../search.svg';
 
 const INITIAL_FORM_STATE = {
   searchValue: '',
@@ -24,7 +25,7 @@ const Searchbar = ({ onSubmit }) => {
     <div>
       <form className={css.search_form} onSubmit={handleSubmit}>
         <button type="submit" className={css.search_button}>
-          <span>Search</span>
+          <img src={search} alt="search img" />
         </button>
 
         <input

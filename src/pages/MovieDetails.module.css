@@ -4,18 +4,19 @@
     margin-bottom: 20px;
     width: 100%;
 }
-.button{
+.button_goback{
     margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.747);
-    color: black;
-    border-radius: 5px;
+    margin-bottom: 40px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50px;
+    border: none;
     cursor: pointer;
-    font-weight: 600;
-    font-size: 14px;
 }
-button:hover{
-    background-color: rgb(133, 8, 8);
+.button_goback:hover{
+    background-color: greenyellow;
+    scale: 1.1;
 }
 .img{
     width: 300px;

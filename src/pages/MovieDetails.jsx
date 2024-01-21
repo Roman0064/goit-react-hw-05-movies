@@ -3,7 +3,8 @@ import { useParams,useLocation,useNavigate,Link,Routes,Route } from 'react-route
 import { MoviesAPI } from 'services/api';
 import { useFetch } from 'hooks/useFetch';
 import { Loader } from 'components';
-import css from './MovieDetails.module.css'
+import css from './MovieDetails.module.css';
+import goback from '../goback.svg';
 
 
 const LazyCast = lazy(() => import('./Cast'));
@@ -35,7 +36,7 @@ const MovieDetails = () => {
 
   return (
     <div className={css.wrapper}>
-      <button onClick={() => handleMoveBack()} className={css.button}> Go back </button>
+      <button onClick={() => handleMoveBack()} className={css.button_goback}> <img src={goback} alt="go back icon" /> </button>
       {error && <p>{error.message}</p>}
       {isFetching && (
         <div>
